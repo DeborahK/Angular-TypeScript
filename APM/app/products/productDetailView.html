@@ -1,0 +1,64 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2">Name:</div>
+                    <div class="col-md-6">{{vm.product.productName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Code:</div>
+                    <div class="col-md-6">{{vm.product.productCode }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Description:</div>
+                    <div class="col-md-6">{{vm.product.description }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Availability:</div>
+                    <div class="col-md-6">{{vm.product.releaseDate|date }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Cost:</div>
+                    <div class="col-md-6">{{vm.product.cost|currency }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Price:</div>
+                    <div class="col-md-6">{{ vm.product.price|currency }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Margin:</div>
+                    <div class="col-md-6">{{ vm.marginPercent | number:0}}%</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Tags:</div>
+                    <div class="col-md-6">{{vm.product.tagList}}</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <img class="center-block img-responsive"
+                     style="width:200px;margin:2px;"
+                     ng-src="{{vm.product.imageUrl}}"
+                     title="{{vm.product.productName}}">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-default"
+           ui-sref="productList"
+           style="width:80px">
+            <I class="glyphicon glyphicon-chevron-left"></i>
+            Back
+        </a>
+        <a class="btn btn-primary"
+           ui-sref="productEdit.info({productId: vm.product.productId})"
+           style="width:80px;margin-left:10px">
+            Edit
+        </a>
+    </div>
+</div>

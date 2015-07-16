@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
     <div class="panel-heading" style="font-size:large">
-        {{vm.title}}
+        {{::vm.title}}
     </div>
 
     <div class="panel-body">
@@ -23,20 +23,8 @@
                     <div class="col-md-6">{{vm.product.releaseDate|date }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2">Cost:</div>
-                    <div class="col-md-6">{{vm.product.cost|currency }}</div>
-                </div>
-                <div class="row">
                     <div class="col-md-2">Price:</div>
                     <div class="col-md-6">{{ vm.product.price|currency }}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Margin:</div>
-                    <div class="col-md-6">{{ vm.marginPercent | number:0}}%</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Tags:</div>
-                    <div class="col-md-6">{{vm.product.tagList}}</div>
                 </div>
             </div>
 
@@ -50,15 +38,9 @@
     </div>
     <div class="panel-footer">
         <a class="btn btn-default"
-           ui-sref="productList"
+           ng-href="#productList"
            style="width:80px">
-            <I class="glyphicon glyphicon-chevron-left"></i>
-            Back
-        </a>
-        <a class="btn btn-primary"
-           ui-sref="productEdit.info({productId: vm.product.productId})"
-           style="width:80px;margin-left:10px">
-            Edit
+            < Back
         </a>
     </div>
 </div>

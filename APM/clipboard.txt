@@ -1,4 +1,4 @@
-vm.products = [
+this.products = [
     {
         "productId": 1,
         "productName": "Leaf Rake",

@@ -56,6 +56,9 @@ module app.common {
                     }
                 }
             }
+            
+            // with lodash
+            // var product = _.find(products, function(x) { return x.productId == _.last(_.split(url, '/', 4)) });
             return [200, product, {}];
         });
 
